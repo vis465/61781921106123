@@ -49,16 +49,4 @@ npm start
 
 The frontend application is integrated with a backend server to fetch product data. Make sure to update the API endpoint URL in the `api.js` file to point to your backend server.
 
-## Contributing
 
-Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
-
-1. Fork the repository
-2. Create your feature branch: `git checkout -b feature-name`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin feature-name`
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
