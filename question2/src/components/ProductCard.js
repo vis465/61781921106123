@@ -10,7 +10,7 @@ const ProductCard = ({ product }) => {
       <CardMedia
         component="img"
         height="140"
-        // Use placeholder image URL or replace it with the actual product image URL
+       
         image={product.image || 'https://picsum.photos/200/300'}
         alt={product.name}
       />

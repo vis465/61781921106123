@@ -42,67 +42,73 @@ const ProductList = () => {
       <Typography variant="h4" gutterBottom>
         All Products
       </Typography>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={3}>
-          <TextField
-            name="categoryname"
-            label="Category"
-            fullWidth
-            onChange={handleFilterChange}
-          />
-          <TextField
-            name="companyname"
-            label="Company"
-            fullWidth
-            onChange={handleFilterChange}
-          />
-          <TextField
-            name="rating"
-            label="Rating"
-            fullWidth
-            onChange={handleFilterChange}
-          />
-          <TextField
-            name="minprice"
-            label="Min Price"
-            fullWidth
-            onChange={handleFilterChange}
-          />
-          <TextField
-            name="maxprice"
-            label="Max Price"
-            fullWidth
-            onChange={handleFilterChange}
-          />
-          <Select name="availability" onChange={handleFilterChange} fullWidth>
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value="in-stock">In Stock</MenuItem>
-            <MenuItem value="out-of-stock">Out of Stock</MenuItem>
-          </Select>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleApplyFilters}
-          >
-            Apply Filters
-          </Button>
-        </Grid>
-        <Grid item xs={12} sm={9}>
-          <Grid container spacing={3}>
-            {products.map((product) => (
-              <Grid item xs={12} sm={6} md={4} key={product.id}>
-                <ProductCard product={product} />
-                <Typography variant="body1" component="div">
-                  {product.productName}
-                </Typography>{" "}
-                {/* Display product name */}
-              </Grid>
-            ))}
-          </Grid>
-        </Grid>
-      </Grid>
+      <Grid container spacing={1} alignItems="center">
+  <Grid item xs={12} sm={2}>
+    <TextField
+      name="categoryname"
+      label="Category"
+      fullWidth
+      size="small"
+      onChange={handleFilterChange}
+    />
+  </Grid>
+  <Grid item xs={12} sm={2}>
+    <TextField
+      name="companyname"
+      label="Company"
+      fullWidth
+      size="small"
+      onChange={handleFilterChange}
+    />
+  </Grid>
+  <Grid item xs={12} sm={1}>
+    <TextField
+      name="rating"
+      label="Rating"
+      fullWidth
+      size="small"
+      onChange={handleFilterChange}
+    />
+  </Grid>
+  <Grid item xs={12} sm={1}>
+    <TextField
+      name="minprice"
+      label="Min Price"
+      fullWidth
+      size="small"
+      onChange={handleFilterChange}
+    />
+  </Grid>
+  <Grid item xs={12} sm={1}>
+    <TextField
+      name="maxprice"
+      label="Max Price"
+      fullWidth
+      size="small"
+      onChange={handleFilterChange}
+    />
+  </Grid>
+  <Grid item xs={12} sm={1}>
+    <Select name="availability" onChange={handleFilterChange} fullWidth size="small">
+      <MenuItem value="">
+        <em>None</em>
+      </MenuItem>
+      <MenuItem value="in-stock">In Stock</MenuItem>
+      <MenuItem value="out-of-stock">Out of Stock</MenuItem>
+    </Select>
+  </Grid>
+  <Grid item xs={12} sm={2}>
+    <Button
+      variant="contained"
+      color="primary"
+      onClick={handleApplyFilters}
+    >
+      Apply Filters
+    </Button>
+  </Grid>
+</Grid>
+
+
     </Box>
   );
 };
