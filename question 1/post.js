@@ -1,3 +1,4 @@
+// here we are importing the necessory libraries
 const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
@@ -22,8 +23,9 @@ const getAccessToken = async () => {
         console.error("Error fetching access token:", error.message);
         throw new Error("Failed to retrieve access token");
     }
-};
+}; // this fn will return the auth token everytime when we run this server as I had faced auth error for every time i made a request
 
+// API endpoint 
 app.post('/getProducts', async (req, res) => {
     let data = req.body;
     console.log(data);
@@ -31,16 +33,16 @@ app.post('/getProducts', async (req, res) => {
     try {
         // Get the access token
         const token = await getAccessToken();
-
+        //token is passed in
         let headers = {
             "Authorization": `Bearer ${token}`
         };
 
         let url = `http://20.244.56.144/test/companies/${data.companyname}/categories/${data.categoryname}/products?top=${data.n}&minPrice=${data.minprice}&maxPrice=${data.maxprice}`;
         let response = await axios.get(url, { headers });
-        console.log(response.data);
+        console.log(response.data); //response is logged
         res.status(200).json(response.data);
-    } catch (error) {
+    } catch (error) { //error handling
         console.error("Error fetching products:", error.message);
         res.status(500).json({ error: error.message });
     }
